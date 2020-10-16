@@ -18,13 +18,13 @@
   <!-- JQVMap -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -39,7 +39,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="<?php echo base_url();?>assets/index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -229,43 +229,43 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/layout/top-nav.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Top Navigation</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/layout/top-nav-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Top Navigation + Sidebar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/layout/boxed.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Boxed</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/layout/fixed-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Fixed Sidebar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/layout/fixed-topnav.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Fixed Navbar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-footer.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/layout/fixed-footer.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Fixed Footer</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/layout/collapsed-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Collapsed Sidebar</p>
                 </a>
@@ -282,19 +282,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/charts/chartjs.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ChartJS</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/charts/flot.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Flot</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/charts/inline.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inline</p>
                 </a>
@@ -311,49 +311,49 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/UI/general.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>General</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/UI/icons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Icons</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/buttons.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/UI/buttons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Buttons</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/sliders.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/UI/sliders.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sliders</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/modals.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/UI/modals.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Modals & Alerts</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/navbar.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/UI/navbar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Navbar & Tabs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/timeline.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/UI/timeline.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Timeline</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/ribbons.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/UI/ribbons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ribbons</p>
                 </a>
@@ -370,25 +370,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/forms/general.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>General Elements</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/forms/advanced.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Advanced Elements</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/forms/editors.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Editors</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/validation.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/forms/validation.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Validation</p>
                 </a>
@@ -405,19 +405,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/tables/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Simple Tables</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/tables/data.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>DataTables</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/tables/jsgrid.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>jsGrid</p>
                 </a>
@@ -426,7 +426,7 @@
           </li>
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="<?php echo base_url();?>assets/pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Calendar
@@ -435,7 +435,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="<?php echo base_url();?>assets/pages/gallery.html" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery
@@ -452,19 +452,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/mailbox/mailbox.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/mailbox/compose.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compose</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/mailbox/read-mail.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Read</p>
                 </a>
@@ -481,49 +481,49 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/invoice.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Invoice</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/profile.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/e-commerce.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/e-commerce.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>E-commerce</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/projects.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/projects.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Projects</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/project-add.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Add</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/project-edit.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Edit</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-detail.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/project-detail.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Detail</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/contacts.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/contacts.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Contacts</p>
                 </a>
@@ -540,67 +540,67 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/login.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/login.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Login</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/register.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/register.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Register</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/forgot-password.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/forgot-password.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Forgot Password</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/recover-password.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/recover-password.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Recover Password</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/lockscreen.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/lockscreen.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lockscreen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/legacy-user-menu.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Legacy User Menu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/language-menu.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/language-menu.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Language Menu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/404.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/404.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Error 404</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/500.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/500.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Error 500</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/pace.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/pace.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pace</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/blank.html" class="nav-link">
+                <a href="<?php echo base_url();?>assets/pages/examples/blank.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Blank Page</p>
                 </a>
@@ -1339,38 +1339,38 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/moment/moment.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="<?php echo base_url();?>assets/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<script src="<?php echo base_url();?>assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="<?php echo base_url();?>assets/dist/js/demo.js"></script>
 </body>
 </html>
