@@ -12,7 +12,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <style>
             ul.breadcrumb {
-                padding: 10px 16px;
+                padding: 0px 16px;
                 list-style: none;
                 background-color: rgba(255, 255, 255, 0.5);
             }
@@ -46,8 +46,10 @@
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             </form>
             <!-- Navbar-->
-            <h7 style="color:#e6e6e6;padding:6px;">Logout</h7>
-            <i style="color:#e6e6e6"class="fas fa-arrow-right"></i>
+            <a href="<?= base_url('loginadmin') ?>">
+                <h7 style="color:#e6e6e6;padding:6px" >Logout</h7>
+                <i style="color:#e6e6e6"class="fas fa-arrow-right"></i>
+            </a>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
@@ -64,15 +66,15 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                                 Home
                             </a>
-                            <a class="nav-link" href="<?= base_url('admin') ?>">
+                            <a class="nav-link" href="<?= base_url('daftaradmin') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-server"></i></div>
                                 Admin
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="<?= base_url('daftarcalon') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Calon
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="<?= base_url('hasilpemilihan') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-vote-yea"></i></div>
                                 Hasil Pemilihan
                             </a>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Daftaradmin extends CI_Controller {
+class Daftarcalon extends CI_Controller {
 	
 	public function __construct()
     {
@@ -11,6 +11,6 @@ class Daftaradmin extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('template/topbarsidebar');
-		$this->load->view('daftaradmin');
+		$this->load->view('daftarcalon');
 	}
 }
