@@ -25,9 +25,8 @@
 
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
-                    
-				<div class="login100-pic js-tilt" data-tilt>
+			<div class="wrap-login100">        
+				<div class=" js-tilt" >
                     <p style="font-family: Poppins-Medium;color: #fff;"class="text-center">-</p>
                     <p style="font-family: Poppins-Medium;color: #fff;"class="text-center">-</p>
                     <h3 style="font-family: Poppins-Medium"class="text-center">Selamat Datang, Tuan</h3>
@@ -55,7 +54,7 @@
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Masuk
+							<a href="<?= base_url('home') ?>" style="color:white">Masuk</a> 
 						</button>
 					</div>
 					<div class="text-center p-t-12">
