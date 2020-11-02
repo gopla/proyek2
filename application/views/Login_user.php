@@ -28,8 +28,15 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
-	<div class="limiter">
+<style>
+body{
+	margin:0;
+	padding:0;
+	background: url('image/background.jpeg');
+	background-size:cover;
+}
+</style>
+	<div class="limiter" style="opacity: 93%">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
@@ -42,12 +49,11 @@
 						<input class="input100" type="text" required>
 	
 					</div>
-					<div class="container-login100-form-btn">
+					<div class="container-login100-form-btn" style="text-align: center; margin-top: -25px;">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								<button onclick='javascript:alert("Halo.. Selamat Datang di SistemIT.com")' href='#'>Masuk</button>
-							</button>
+							<button class="btn warning" href="">Masuk</button>
+
 						</div>
 					</div>
 				</form>
