@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2020 at 09:10 AM
+-- Generation Time: Nov 04, 2020 at 04:55 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -34,6 +34,15 @@ CREATE TABLE `admin` (
   `password` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
+(2, 'hana', '202cb962ac59075b964b07152d234b70'),
+(3, 'zea', '202cb962ac59075b964b07152d234b70'),
+(5, 'takaradjiman', '202cb962ac59075b964b07152d234b70');
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +57,14 @@ CREATE TABLE `calon` (
   `visimisi` text,
   `foto` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `calon`
+--
+
+INSERT INTO `calon` (`id_calon`, `no_urut`, `nama`, `kelas`, `visimisi`, `foto`) VALUES
+(4, '01', 'Muhammad Misbaqul Ulum', 'MI 3B', 'Jos', 'user1-128x128.jpg'),
+(5, '02', 'Irfak Wahyudi', 'MI 3B', 'Gandos', 'user8-128x128.jpg');
 
 -- --------------------------------------------------------
 
@@ -70,9 +87,25 @@ CREATE TABLE `harapan` (
 
 CREATE TABLE `pemilih` (
   `id_pemilih` int(11) NOT NULL,
-  `pin` int(11) DEFAULT NULL,
+  `pin` varchar(10) DEFAULT NULL,
   `isVote` enum('Y','N') DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemilih`
+--
+
+INSERT INTO `pemilih` (`id_pemilih`, `pin`, `isVote`) VALUES
+(7, 'JTLVUU', 'N'),
+(8, 'LXBF80', 'N'),
+(9, 'GX1FQK', 'N'),
+(10, 'FPZJYY', 'N'),
+(11, 'NDIFA5', 'N'),
+(12, 'SJPBQO', 'N'),
+(13, 'MGBQOQ', 'N'),
+(14, 'FEP2AW', 'N'),
+(15, 'FYYFMR', 'N'),
+(16, 'RRD4LJ', 'N');
 
 --
 -- Indexes for dumped tables
@@ -112,13 +145,13 @@ ALTER TABLE `pemilih`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `calon`
 --
 ALTER TABLE `calon`
-  MODIFY `id_calon` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_calon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `harapan`
@@ -130,7 +163,7 @@ ALTER TABLE `harapan`
 -- AUTO_INCREMENT for table `pemilih`
 --
 ALTER TABLE `pemilih`
-  MODIFY `id_pemilih` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pemilih` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
