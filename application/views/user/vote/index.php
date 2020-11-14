@@ -88,10 +88,13 @@
               <h5 class="card-title"><?= $data->no_urut ?>. <?= $data->nama ?></h5>
               <p class="card-text"><?= $data->kelas ?></p>
               <p class="card-text"><?= $data->visimisi ?> </p>
-              <a style="margin-left:70%;" href="#" class="btn btn-primary">
-                Pilih
-                <i class="fas fa-edit    "></i>
-              </a>
+              <form action="vote/pilih" method="post">
+                <input type="hidden" name="id" value="<?= $data->id_calon ?>">
+                <button type="submit" style="margin-left:70%;" class="btn btn-primary">
+                    Pilih
+                  <i class="fas fa-edit"></i>
+                </a>
+              </form>
             </div>
           </div>
         </div>
