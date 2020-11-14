@@ -9,7 +9,8 @@ class vote extends CI_Controller
   {
     parent::__construct();
     $this->load->model('admin/calon_model', 'calon');
-    $this->load->model('vote_model');
+    $this->load->model('user/vote_model','vote');
+    $this->load->model('admin/pemilih_model', 'pemilih');
   }
 
 
@@ -24,8 +25,8 @@ class vote extends CI_Controller
   public function pilih()
   {
     $id = $this->input->post('id');
-    $where = array('id_calon' => $id);
-    $cek = $this->vote_model->select_data($where,'vote')->result();
+    $pin = $this->input->post('pin');
+    $cek = $this->vote->getVoteByCalon($id);
 
     $jml_vote = 0;
     if(count($cek) != 0){
@@ -36,14 +37,15 @@ class vote extends CI_Controller
       'id_calon' => $id,
       'jml_vote' => $jml_vote + 1,
     );  
-
-    if($cek === 0){
-      $this->vote_model->add_data($data, 'vote');
+   
+    if(empty($cek)){
+      $this->vote->add_data($data, 'vote');
     }else{
       $where = array('id_vote' => $cek[0]->id_vote);
-      $this->vote_model->update_data($where,$data,'vote');
+      $this->vote->update_data($where,$data,'vote');
     }
 
+    $this->pemilih->changePemilih($pin);
     $this->load->view('user/harapan/index', $data);
   }
 }

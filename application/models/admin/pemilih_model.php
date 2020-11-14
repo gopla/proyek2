@@ -23,6 +23,16 @@ class pemilih_model extends CI_Model
     return true;
   }
 
+  public function changePemilih($pin)
+  {
+    $data = [
+      'isVote' => 'Y',
+    ];
+
+    $this->db->where('pin', $pin);
+    $this->db->update('pemilih', $data);
+  }
+
   public function countPemilih()
   {
     return $this->db->count_all('pemilih');
