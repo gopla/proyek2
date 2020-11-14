@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2020 at 06:21 AM
+-- Generation Time: Nov 14, 2020 at 09:06 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -37,7 +37,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
-(2, 'hana', '202cb962ac59075b964b07152d234b70'),
+(2, 'hana', '21232f297a57a5a743894a0e4a801fc3'),
 (3, 'zea', '202cb962ac59075b964b07152d234b70'),
 (5, 'takaradjiman', '202cb962ac59075b964b07152d234b70');
 
@@ -62,7 +62,8 @@ CREATE TABLE `calon` (
 
 INSERT INTO `calon` (`id_calon`, `no_urut`, `nama`, `kelas`, `visimisi`, `foto`) VALUES
 (4, '01', 'Muhammad Misbaqul Ulum', 'MI 3B', 'Jos', 'user1-128x128.jpg'),
-(5, '02', 'Irfak Wahyudi', 'MI 3B', 'Gandos', 'user8-128x128.jpg');
+(5, '02', 'Irfak Wahyudi', 'MI 3B', 'Gandos', 'user8-128x128.jpg'),
+(6, '03', 'Naufal Yudhistira', 'MI-3B', 'Man Jadda Wajadda', '31.jpg');
 
 -- --------------------------------------------------------
 
@@ -86,7 +87,8 @@ INSERT INTO `harapan` (`id_harapan`, `id_pemilih`, `id_calon`, `harapan`) VALUES
 (2, 8, 4, 'Jaya'),
 (3, 9, 4, 'josss'),
 (4, 10, 5, 'Selalu dihati'),
-(5, 11, 5, 'Semangat\r\n');
+(5, 11, 5, 'Semangat\r\n'),
+(6, 12, 6, 'mantab');
 
 -- --------------------------------------------------------
 
@@ -110,11 +112,21 @@ INSERT INTO `pemilih` (`id_pemilih`, `pin`, `isVote`) VALUES
 (9, 'GX1FQK', 'Y'),
 (10, 'FPZJYY', 'Y'),
 (11, 'NDIFA5', 'Y'),
-(12, 'SJPBQO', 'N'),
+(12, 'SJPBQO', 'Y'),
 (13, 'MGBQOQ', 'N'),
 (14, 'FEP2AW', 'N'),
 (15, 'FYYFMR', 'N'),
-(16, 'RRD4LJ', 'N');
+(16, 'RRD4LJ', 'N'),
+(17, '0PMSTB', 'N'),
+(18, 'W24ZND', 'N'),
+(19, 'UXBPOV', 'N'),
+(20, 'I95JUH', 'N'),
+(21, 'B24IYT', 'N'),
+(22, 'YBET3L', 'N'),
+(23, 'UDFHIP', 'N'),
+(24, 'CEM3MX', 'N'),
+(25, 'G4ZWZK', 'N'),
+(26, 'XPMSDC', 'N');
 
 -- --------------------------------------------------------
 
@@ -134,7 +146,8 @@ CREATE TABLE `vote` (
 
 INSERT INTO `vote` (`id_vote`, `id_calon`, `jml_vote`) VALUES
 (1, 4, 32),
-(2, 5, 1);
+(2, 5, 1),
+(3, 6, 1);
 
 --
 -- Indexes for dumped tables
@@ -185,22 +198,22 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `calon`
 --
 ALTER TABLE `calon`
-  MODIFY `id_calon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_calon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `harapan`
 --
 ALTER TABLE `harapan`
-  MODIFY `id_harapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_harapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `pemilih`
 --
 ALTER TABLE `pemilih`
-  MODIFY `id_pemilih` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_pemilih` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `vote`
 --
 ALTER TABLE `vote`
-  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --

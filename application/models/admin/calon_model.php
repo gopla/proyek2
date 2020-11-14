@@ -10,6 +10,15 @@ class calon_model extends CI_Model
     return $this->db->get('calon')->result();
   }
 
+  public function getVoteCalon()
+  {
+    $this->db->select('*');
+     $this->db->from('calon');
+     $this->db->join('vote','vote.id_calon = calon.id_calon');
+     $query = $this->db->get();
+     return $query->result();
+  }
+
   public function showCalon($id)
   {
     return $this->db->get_where('calon', array('id_calon' => $id))->result();
