@@ -9,8 +9,8 @@
 			$this->db->update($table,$data);
 		}	
 
-		function select_data($where,$table){		
-			return $this->db->get_where($table,$where);
+		function getVoteByCalon($idCalon){		
+			return $this->db->get_where('vote', ['id_calon' => $idCalon])->result();
 		}
 	}
 ?>

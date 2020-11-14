@@ -9,7 +9,8 @@ class vote extends CI_Controller
   {
     parent::__construct();
     $this->load->model('admin/calon_model', 'calon');
-    $this->load->model('vote_model');
+    $this->load->model('user/vote_model','vote');
+    $this->load->model('admin/pemilih_model', 'pemilih');
   }
 
 
@@ -25,8 +26,8 @@ class vote extends CI_Controller
   public function pilih()
   {
     $id = $this->input->post('id');
-    $where = array('id_calon' => $id);
-    $cek = $this->vote_model->select_data($where,'vote')->result();
+    $pin = $this->input->post('pin');
+    $cek = $this->vote->getVoteByCalon($id);
 
     $jml_vote = 0;
 
@@ -52,6 +53,7 @@ class vote extends CI_Controller
       $pin = $this->session->user;
       $wherePin = array('pin' => $pin);
       $where = array('id_vote' => $cek[0]->id_vote);
+      
       $this->vote_model->update_data($where,$data,'vote');
       $this->vote_model->update_data($wherePin,$dataPemilih,'pemilih');
     }

@@ -57,7 +57,6 @@
             color: #000;
           }
         </style>
-
         <body>
           <!-- Navbar -->
           <nav class=" navbar navbar-expand navbar-light navbar-dark">
