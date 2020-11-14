@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2020 at 05:20 AM
+-- Generation Time: Nov 14, 2020 at 06:21 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -77,6 +77,17 @@ CREATE TABLE `harapan` (
   `harapan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `harapan`
+--
+
+INSERT INTO `harapan` (`id_harapan`, `id_pemilih`, `id_calon`, `harapan`) VALUES
+(1, 7, NULL, NULL),
+(2, 8, 4, 'Jaya'),
+(3, 9, 4, 'josss'),
+(4, 10, 5, 'Selalu dihati'),
+(5, 11, 5, 'Semangat\r\n');
+
 -- --------------------------------------------------------
 
 --
@@ -94,11 +105,11 @@ CREATE TABLE `pemilih` (
 --
 
 INSERT INTO `pemilih` (`id_pemilih`, `pin`, `isVote`) VALUES
-(7, 'JTLVUU', 'N'),
-(8, 'LXBF80', 'N'),
-(9, 'GX1FQK', 'N'),
-(10, 'FPZJYY', 'N'),
-(11, 'NDIFA5', 'N'),
+(7, 'JTLVUU', 'Y'),
+(8, 'LXBF80', 'Y'),
+(9, 'GX1FQK', 'Y'),
+(10, 'FPZJYY', 'Y'),
+(11, 'NDIFA5', 'Y'),
 (12, 'SJPBQO', 'N'),
 (13, 'MGBQOQ', 'N'),
 (14, 'FEP2AW', 'N'),
@@ -122,7 +133,8 @@ CREATE TABLE `vote` (
 --
 
 INSERT INTO `vote` (`id_vote`, `id_calon`, `jml_vote`) VALUES
-(1, 4, 14);
+(1, 4, 32),
+(2, 5, 1);
 
 --
 -- Indexes for dumped tables
@@ -178,7 +190,7 @@ ALTER TABLE `calon`
 -- AUTO_INCREMENT for table `harapan`
 --
 ALTER TABLE `harapan`
-  MODIFY `id_harapan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_harapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `pemilih`
 --
@@ -188,7 +200,7 @@ ALTER TABLE `pemilih`
 -- AUTO_INCREMENT for table `vote`
 --
 ALTER TABLE `vote`
-  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
