@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class hasil_model extends CI_Model
+class Hasil_model extends CI_Model
 {
   public function getHarapanByCalon($idCalon)
   {

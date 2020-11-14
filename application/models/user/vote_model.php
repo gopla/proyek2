@@ -1,5 +1,5 @@
 <?php
-	class vote_model extends CI_Model{
+	class Vote_model extends CI_Model{
 		function add_data($data,$table){
 			$this->db->insert($table,$data);
 		}
