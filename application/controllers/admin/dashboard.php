@@ -12,8 +12,8 @@ class dashboard extends CI_Controller
     $this->load->model('admin/admin_model', 'admin');
     $this->load->model('admin/calon_model', 'calon');
     $this->load->model('admin/pemilih_model', 'pemilih');
+    $this->load->model('admin/hasil_model','hasil');
   }
-
 
   public function index()
   {
@@ -23,6 +23,7 @@ class dashboard extends CI_Controller
       "adminCount" => $this->admin->countAdmin(),
       "calonCount" => $this->calon->countCalon(),
       "pemilihCount" => $this->pemilih->countPemilih(),
+      "dataCalon" => $this->hasil->getNamaCalonAndCount(),
     );
     $this->load->view('admin/template/header', $data);
     $this->load->view('admin/template/sidebar');

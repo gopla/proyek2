@@ -3,7 +3,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
@@ -18,7 +18,7 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
@@ -33,7 +33,7 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
@@ -48,21 +48,6 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
         </div>
         <!-- /.row -->
         <!-- Main row -->
@@ -74,15 +59,12 @@
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
-                  Sales
+                  <span>Hasil Pemilihan</span>
                 </h3>
                 <div class="card-tools">
                   <ul class="nav nav-pills ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                      <a class="nav-link active" href="<?= base_url("admin/hasil") ?>" >Detail</a>
                     </li>
                   </ul>
                 </div>
@@ -91,10 +73,7 @@
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
                   <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;">
-                    <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                  </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                    <canvas id="chart-canvas" height="300" style="height: 300px;"></canvas>
                   </div>
                 </div>
               </div><!-- /.card-body -->
@@ -111,3 +90,51 @@
     <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+    <script>
+      /* Chart.js Charts */
+	// hasil chart
+	var hasilChartCanvas = document
+		.getElementById("chart-canvas")
+    .getContext("2d");
+  
+  let dataCalon = <?php echo json_encode($dataCalon) ?>
+    
+  let namaCalon = [],
+      jmlVote = []
+
+  dataCalon.map(data => {
+    namaCalon.push(data.nama)
+    jmlVote.push(data.jml_vote)
+  })
+
+	// This will get the first returned node in the jQuery collection.
+	var hasilChart = new Chart(hasilChartCanvas, {
+		type: "pie",
+		data: {
+			labels: namaCalon,
+			datasets: [
+				{
+					label: "Pemilih",
+					data: jmlVote,
+					backgroundColor: [
+						"rgba(255, 99, 132, 0.5)",
+						"rgba(54, 162, 235, 0.2)",
+						"rgba(255, 206, 86, 0.2)",
+					],
+					borderColor: [
+						"rgba(255,99,132,1)",
+						"rgba(54, 162, 235, 1)",
+						"rgba(255, 206, 86, 1)",
+					],
+				},
+			],
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			legend: {
+				display: true,
+			},
+		},
+	});
+    </script>
