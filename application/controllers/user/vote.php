@@ -47,15 +47,15 @@ class vote extends CI_Controller
     if(count($cek) === 0){
       $pin = $this->session->user;
       $wherePin = array('pin' => $pin);
-      $this->vote_model->add_data($data, 'vote');
-      $this->vote_model->update_data($wherePin,$dataPemilih,'pemilih');
+      $this->vote->add_data($data, 'vote');
+      $this->vote->update_data($wherePin,$dataPemilih,'pemilih');
     }else{
       $pin = $this->session->user;
       $wherePin = array('pin' => $pin);
       $where = array('id_vote' => $cek[0]->id_vote);
       
-      $this->vote_model->update_data($where,$data,'vote');
-      $this->vote_model->update_data($wherePin,$dataPemilih,'pemilih');
+      $this->vote->update_data($where,$data,'vote');
+      $this->vote->update_data($wherePin,$dataPemilih,'pemilih');
     }
 
     $this->session->set_userdata('pilih', 'y');
@@ -74,7 +74,7 @@ class vote extends CI_Controller
       'harapan' => $this->input->post('harapan')
     );
 
-    $this->vote_model->add_data($data, 'harapan');
+    $this->vote->add_data($data, 'harapan');
     $this->session->sess_destroy();
     redirect('/login');
   }
