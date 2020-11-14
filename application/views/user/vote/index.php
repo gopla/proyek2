@@ -90,6 +90,7 @@
               <p class="card-text"><?= $data->visimisi ?> </p>
               <form action="vote/pilih" method="post">
                 <input type="hidden" name="id" value="<?= $data->id_calon ?>">
+                <input type="hidden" name="pin" value="<?=$this->session->userdata('pin');?>">
                 <button type="submit" style="margin-left:70%;" class="btn btn-primary">
                     Pilih
                   <i class="fas fa-edit"></i>

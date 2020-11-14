@@ -32,7 +32,7 @@ class login extends CI_Controller
     if ($cekLogin) {
       foreach ($cekLogin as $row) {
         $this->session->set_userdata('id_pemilih', $row->id_pemilih);
-        $this->session->set_userdata('user', $row->pin);
+        $this->session->set_userdata('pin', $row->pin);
 
         redirect('user/vote');
       }

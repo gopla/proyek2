@@ -22,7 +22,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><?= $adminCount ?></h3>
+                <h3><?= $calonCount ?></h3>
 
                 <p>Calon</p>
               </div>
