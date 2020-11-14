@@ -47,7 +47,7 @@
         </li>
         <li class="nav-item ">
           <a href="<?= base_url("admin/hasil") ?>" class="nav-link" id="navHasil">
-            <i class="nav-icon fas fa-tree  "></i>
+            <i class="nav-icon fas fa-chart-pie    "></i>
             <p>
               Hasil Pemilihan
             </p>
