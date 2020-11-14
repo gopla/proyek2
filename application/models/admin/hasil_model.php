@@ -8,4 +8,11 @@ class hasil_model extends CI_Model
   {
     return $this->db->get_where('harapan',['id_calon' => $idCalon])->result();
   }
+
+  public function getNamaCalonAndCount()
+  {
+    $this->db->select('calon.nama, vote.*');
+    $this->db->join('calon', 'vote.id_calon = calon.id_calon');
+    return $this->db->get('vote')->result();
+  }
 }

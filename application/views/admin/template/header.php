@@ -31,6 +31,8 @@ if (empty($this->session->userdata('id_admin'))) {
   <link rel="stylesheet" href="<?= base_url("assets/plugins/daterangepicker/daterangepicker.css") ?>">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- ChartJS -->
+  <script src="<?= base_url("assets/plugins/chart.js/Chart.min.js") ?>"></script>
   <style>
     .btn-lgt:hover span {
       color: #fff;

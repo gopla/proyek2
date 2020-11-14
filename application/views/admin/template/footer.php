@@ -18,8 +18,6 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url("assets/plugins/bootstrap/js/bootstrap.bundle.min.js") ?>"></script>
-<!-- ChartJS -->
-<script src="<?= base_url("assets/plugins/chart.js/Chart.min.js") ?>"></script>
 <!-- daterangepicker -->
 <script src="<?= base_url("assets/plugins/moment/moment.min.js") ?>"></script>
 <script src="<?= base_url("assets/plugins/daterangepicker/daterangepicker.js") ?>"></script>
@@ -36,11 +34,11 @@
 <script src="<?= base_url("assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js") ?>"></script>
 <script src="<?= base_url("assets/plugins/datatables-responsive/js/dataTables.responsive.min.js") ?>"></script>
 <script src="<?= base_url("assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js") ?>"></script>
-<!-- My Own -->
 <script src="<?= base_url("assets/dist/js/app.js") ?>"></script>
 <!-- page script -->
 <script>
   $(function () {
+      
     $("#table").DataTable({
       "responsive": true,
       "autoWidth": false,
