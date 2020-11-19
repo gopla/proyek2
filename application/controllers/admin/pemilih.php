@@ -44,6 +44,12 @@ class Pemilih extends CI_Controller
       redirect('admin/pemilih');
     }
   }
+  public function delete()
+  {
+    $this->pemilih->destroyPemilih();
+    $this->session->set_flashdata('delete', 'Pemilih deleted');
+    redirect('admin/pemilih');
+  }
 }
   
   /* End of file pemilih.php */
