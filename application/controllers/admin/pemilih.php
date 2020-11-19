@@ -53,7 +53,7 @@ class Pemilih extends CI_Controller
         echo $this->upload->display_errors();exit();
     }
           
-    $inputFileName = './assets/'.$fileName;
+    $inputFileName = './assets/uploads/excel/'.$fileName;
 
     try {
       $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
@@ -80,6 +80,13 @@ class Pemilih extends CI_Controller
       $this->db->insert("pemilih",$data);    
     }
     $this->session->set_flashdata('add', 'Pemilih generated');
+    redirect('admin/pemilih');
+  }
+
+  public function delete()
+  {
+    $this->pemilih->destroyPemilih();
+    $this->session->set_flashdata('delete', 'Pemilih deleted');
     redirect('admin/pemilih');
   }
 }

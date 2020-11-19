@@ -28,8 +28,12 @@
                 </div>
               <?php endif; ?>
               <a href="<?= base_url("admin/pemilih/add") ?>" class="btn btn-success">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-                <span>Add Data</span>
+                <i class="fas fa-file-excel    "></i>
+                <span>Generate Data</span>
+              </a>
+              <a href="<?= base_url("admin/pemilih/delete") ?>" class="btn btn-danger">
+                <i class="fas fa-trash" aria-hidden="true"></i>
+                <span>Delete All Data</span>
               </a>
               <br><br>
               <table id="table" class="table table-bordered table-striped">

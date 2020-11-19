@@ -37,6 +37,11 @@ class Pemilih_model extends CI_Model
   {
     return $this->db->count_all('pemilih');
   }
+
+  public function destroyPemilih()
+  {
+    $this->db->query('DELETE from pemilih');
+  }
 }
   
   /* End of file pemilih_model.php */
