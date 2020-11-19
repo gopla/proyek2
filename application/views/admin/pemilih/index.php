@@ -35,10 +35,6 @@
                 <i class="fas fa-trash" aria-hidden="true"></i>
                 <span>Delete All Data</span>
               </a>
-              <a href="<?= base_url("admin/pemilih/delete") ?>" class="btn btn-danger">
-                <i class="fas fa-trash" aria-hidden="true"></i>
-                <span>Hapus Data</span>
-              </a>
               <br><br>
               <table id="table" class="table table-bordered table-striped">
                 <thead>
