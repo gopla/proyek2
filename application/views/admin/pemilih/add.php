@@ -10,11 +10,12 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
+            <?= form_open_multipart("admin/pemilih/importExcel" )?>
             <form role="form" method="POST">
               <div class="card-body">
                 <div class="form-group">
                   <label>Generate Pemilih sebanyak</label>
-                  <input type="number" class="form-control" placeholder="Jumlah pemilih" name="varPemilih">
+                  <input type="file" class="form-control" placeholder="Jumlah pemilih" name="varPemilih" required> 
                 </div>
               </div>
               <!-- /.card-body -->

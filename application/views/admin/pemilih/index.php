@@ -36,8 +36,10 @@
                 <thead>
                   <tr>
                     <th style="width:10%;">No</th>
-                    <th style="width:70%;">Pin</th>
-                    <th>Status Memilih</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Pin</th>
+                    <th style="width:15%;">Status Memilih</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -45,6 +47,8 @@
                   foreach ($tableDatas as $data) : ?>
                     <tr>
                       <td><?= $no++ ?></td>
+                      <td><?= $data->nama ?></td>
+                      <td><?= $data->email ?></td>
                       <td><?= $data->pin ?></td>
                       <td>
                         <?= $data->isVote == 'Y' ? '<span class="badge badge-success">Sudah Memilih</span>' : '<span class="badge badge-danger">Belum Memilih</span>' ?>
