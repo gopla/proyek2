@@ -31,8 +31,14 @@
                 <i class="fas fa-file-excel    "></i>
                 <span>Generate Data</span>
               </a>
-              <a href="<?= base_url("admin/pemilih/delete") ?>" class="btn btn-danger">
-                <i class="fas fa-trash" aria-hidden="true"></i>
+              <?php if($countPemilih > 0): ?>
+              <a href="<?= base_url("admin/pemilih/send") ?>" class="btn btn-info" onclick="return confirm('Send PIN to all participant?')">
+                <i class="fas fa-mail-bulk    "></i>
+                <span>Send PIN</span>
+              </a>
+              <?php endif ?>
+              <a href="<?= base_url("admin/pemilih/delete") ?>" class="btn btn-danger float-right">
+                <i class="fas fa-trash" aria-hidden="true" onclick="return confirm('Are you sure?');"></i>
                 <span>Delete All Data</span>
               </a>
               <br><br>

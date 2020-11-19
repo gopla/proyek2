@@ -1,5 +1,6 @@
 <?php
-
+ini_set('max_execution_time', 0); 
+ini_set('memory_limit','2048M');
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pemilih extends CI_Controller
@@ -18,6 +19,7 @@ class Pemilih extends CI_Controller
       "title" => "E-Vote WRI | Pemilih",
       "contentTitle" => "Pemilih",
       "tableDatas" => $this->pemilih->getPemilih(),
+      "countPemilih" => $this->pemilih->countPemilih(),
     );
     $this->load->view('admin/template/header', $data);
     $this->load->view('admin/template/sidebar');
@@ -38,10 +40,13 @@ class Pemilih extends CI_Controller
     $this->load->view('admin/template/footer');
   }
 
-  public function importExcel(){
-    $fileName = $_FILES['varPemilih']['name'];
-      
-    $config['upload_path'] = './assets/'; //path upload
+  public function importExcel()
+  {
+    $theFile = $_FILES['varPemilih']['name'];
+    $extFile = strrpos($theFile, '.');
+    $fileName = substr($theFile, 0, $extFile) . date('YmdHis') . substr($theFile, $extFile);
+
+    $config['upload_path'] = './assets/uploads/excel/'; //path upload
     $config['file_name'] = $fileName;  // nama file
     $config['allowed_types'] = 'xls|xlsx|csv'; //tipe file yang diperbolehkan
     $config['max_size'] = 10000; // maksimal sizze
@@ -81,6 +86,47 @@ class Pemilih extends CI_Controller
     }
     $this->session->set_flashdata('add', 'Pemilih generated');
     redirect('admin/pemilih');
+  }
+
+  public function send()
+  {
+    $dataPemilih = $this->pemilih->getPemilih();
+        
+    $config = [
+      'protocol' => 'smtp',
+      'smtp_host' => 'ssl://smtp.gmail.com',
+      'smtp_port' => 465,
+      'smtp_timeout' => 120,
+      'smtp_user' => 'teswri@gmail.com',    // Ganti dengan email gmail anda
+      'smtp_pass' => 'tesWRI-123',      // Ganti dengan Password gmail anda
+      'mailtype' => 'html',
+      'charset' => 'utf-8',
+      'wordwrap' => TRUE,
+      'crlf'    => "\r\n",
+      'newline' => "\r\n"
+    ];
+
+    $this->load->library('email', $config);
+
+    foreach($dataPemilih as $pemilih){
+      $this->email->clear(TRUE);
+
+      $this->email->from('wri@polinema.ac.id', 'Workshop dan Riset Informatika');
+      $this->email->to($pemilih->email);
+      $this->email->subject('PIN untuk Vote Ketua Umum WRI 2020/2021');
+      $this->email->message("Halo $pemilih->nama, jangan lupa ikut voting ketua umum ya! <br>
+      Silahkan login dengan <b>PINmu : $pemilih->pin </b>");
+      $sent = $this->email->send();
+    };
+      
+
+    if ($sent) {
+      $this->session->set_flashdata('add', 'All PIN sent!');
+      redirect('admin/pemilih');
+    } else {
+      show_error($this->email->print_debugger());
+      echo 'Error! email tidak dapat dikirim.';
+    }
   }
 
   public function delete()
