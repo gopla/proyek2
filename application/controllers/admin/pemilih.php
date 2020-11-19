@@ -9,6 +9,7 @@ class Pemilih extends CI_Controller
   {
     parent::__construct();
     $this->load->model('admin/pemilih_model', 'pemilih');
+    $this->load->library('Excel'); //load librari excel
   }
 
   public function index()
@@ -31,18 +32,62 @@ class Pemilih extends CI_Controller
       "contentTitle" => "Add Pemilih"
     );
 
-    $this->form_validation->set_rules('varPemilih', 'Jumlah Pemilih', 'required');
+    $this->load->view('admin/template/header', $data);
+    $this->load->view('admin/template/sidebar');
+    $this->load->view('admin/pemilih/add');
+    $this->load->view('admin/template/footer');
+  }
 
-    if ($this->form_validation->run() == FALSE) {
-      $this->load->view('admin/template/header', $data);
-      $this->load->view('admin/template/sidebar');
-      $this->load->view('admin/pemilih/add');
-      $this->load->view('admin/template/footer');
-    } else {
-      $this->pemilih->storePemilih();
-      $this->session->set_flashdata('add', 'Pemilih generated');
-      redirect('admin/pemilih');
+  public function importExcel(){
+    $fileName = $_FILES['varPemilih']['name'];
+      
+    $config['upload_path'] = './assets/'; //path upload
+    $config['file_name'] = $fileName;  // nama file
+    $config['allowed_types'] = 'xls|xlsx|csv'; //tipe file yang diperbolehkan
+    $config['max_size'] = 10000; // maksimal sizze
+
+    $this->load->library('upload'); //meload librari upload
+    $this->upload->initialize($config);
+      
+    if(! $this->upload->do_upload('varPemilih') ){
+        echo $this->upload->display_errors();exit();
     }
+          
+    $inputFileName = './assets/uploads/excel/'.$fileName;
+
+    try {
+      $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+      $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+      $objPHPExcel = $objReader->load($inputFileName);
+    } catch(Exception $e) {
+      die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+    }
+
+    $sheet = $objPHPExcel->getSheet(0);
+    $highestRow = $sheet->getHighestRow();
+    $highestColumn = $sheet->getHighestColumn();
+
+    for ($row = 2; $row <= $highestRow; $row++){   //  Read a row of data into an array                 
+        $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,
+                                        NULL,
+                                        TRUE,
+                                        FALSE);   
+        $data = array(
+          "nama"=> $rowData[0][0],
+          "email"=> $rowData[0][1],
+          'pin' => strtoupper(random_string('alnum', 6)),
+      );
+      $this->db->insert("pemilih",$data);    
+    }
+    $this->session->set_flashdata('add', 'Pemilih generated');
+    redirect('admin/pemilih');
+  }
+
+  public function delete()
+  {
+    $this->pemilih->destroyPemilih();
+    $this->session->set_flashdata('delete', 'Pemilih deleted');
+    redirect('admin/pemilih');
   }
   public function delete()
   {
