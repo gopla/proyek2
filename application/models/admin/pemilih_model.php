@@ -25,9 +25,9 @@ class Pemilih_model extends CI_Model
 
   public function changePemilih($pin)
   {
-    $data = [
-      'isVote' => 'Y',
-    ];
+    $data = array(
+      'isVote' => 'Y',   
+    );
 
     $this->db->where('pin', $pin);
     $this->db->update('pemilih', $data);

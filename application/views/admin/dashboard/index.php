@@ -53,7 +53,7 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <section class="col-lg-12">
+          <section class="col-lg-8">
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
               <div class="card-header">
@@ -79,10 +79,32 @@
               </div><!-- /.card-body -->
             </div>
             <!-- /.card -->
-
-
           </section>
           <!-- right col -->
+          <div class="col-lg-4">
+            <div class="info-box">
+              <span class="info-box-icon bg-success"><i class="fas fa-chart-bar    "></i></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"><strong>Hasil Pemilihan</strong></span>
+                <a href="#" class="btn btn-outline-primary"><i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            
+            <div class="info-box">
+              <span class="info-box-icon bg-info"><i class="far fa-star"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"><strong>Harapan Calon</strong></span>
+                <a href="#" class="btn btn-outline-primary"><i class="fa fa-download" aria-hidden="true"></i></a>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->

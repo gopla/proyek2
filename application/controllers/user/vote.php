@@ -40,8 +40,10 @@ class Vote extends CI_Controller
       'jml_vote' => $jml_vote + 1,
     );  
 
+    date_default_timezone_set("Asia/Jakarta");
     $dataPemilih = array(
       'isVote' => 'Y',
+      'vote_time' => date("Y-m-d H:i:s"),
     );  
 
     if(count($cek) === 0){
