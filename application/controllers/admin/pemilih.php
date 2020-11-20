@@ -25,6 +25,8 @@ class Pemilih extends CI_Controller
     $this->load->view('admin/template/sidebar');
     $this->load->view('admin/pemilih/index');
     $this->load->view('admin/template/footer');
+    // $this->load->view('admin/template/email', $data);
+    
   }
 
   public function add()
@@ -110,12 +112,16 @@ class Pemilih extends CI_Controller
 
     foreach($dataPemilih as $pemilih){
       $this->email->clear(TRUE);
-
-      $this->email->from('wri@polinema.ac.id', 'Workshop dan Riset Informatika');
+      
+      $this->email->from('wri@polinema.ac.id', 'Workshop Riset Informatika');
       $this->email->to($pemilih->email);
       $this->email->subject('PIN untuk Vote Ketua Umum WRI 2020/2021');
-      $this->email->message("Halo $pemilih->nama, jangan lupa ikut voting ketua umum ya! <br>
-      Silahkan login dengan <b>PINmu : $pemilih->pin </b>");
+      // $this->email->message($mesg);
+      // $this->email->message("Halo $pemilih->nama, jangan lupa ikut voting ketua umum ya! <br>
+      // Silahkan login dengan <b>PINmu : $pemilih->pin </b>");
+      $this->email->message("<p style='text-align: center; line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;'>Hai, <strong>$pemilih->nama<br/></strong></p>
+<p style='text-align: center; line-height: 1.2;'>Jangan lupa ikut pemilihan ketua umum ya!<br/><br/>Login ke aplikasi pakai PINmu dibawah ini<br/><br/><span style='font-size: 28px;'><strong>$pemilih->pin</strong></span><br/><br/></p>
+<p style='text-align: center;'>Terima kasih partisipasinya~!</p>");
       $sent = $this->email->send();
     };
       
