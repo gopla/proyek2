@@ -98,13 +98,19 @@
                 ?>
                   <div class="row">
                     <?php foreach ($tableDatas as $data) : ?>
-                      <div class="col-sm-4">
+                      <div class="col-sm-6">
                         <div class="card">
                           <img class="card-img-top" src="<?= base_url("assets/uploads/calon/$data->foto") ?>" alt="Card image cap">
                           <div class="card-body">
-                            <h5 class="card-title"><?= $data->no_urut ?>. <?= $data->nama ?></h5>
-                            <p class="card-text"><?= $data->kelas ?></p>
-                            <p class="card-text"><?= $data->visimisi ?> </p>
+                            <h1 class="text-center"><?= $data->no_urut ?></h1>
+                            <h3 class="text-center"><?= $data->nama ?></h3>
+                            <p class="text-center"><?= $data->kelas ?></p>
+                            <hr/>
+                            <h3 class="text-center">Visi</h3>
+                            <p class="card-text text-center"><?= $data->visi ?> </p>
+                            <hr/>
+                            <h3 class="text-center">Misi</h3>
+                            <p class="card-text"><?= $data->misi ?> </p>
                             <form action="vote/pilih" method="post">
                               <input type="hidden" name="id" value="<?= $data->id_calon ?>">
                               <button type="submit" style="margin-left:70%;" class="btn btn-primary">

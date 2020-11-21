@@ -17,9 +17,14 @@
                 <p class="text-muted text-center"><?= $data->kelas ?></p>
 
                 <ul class="list-group list-group-unbordered mb-3">
-                  <b>Visi & Misi</b>
+                  <b>Visi</b>
                   <li class="list-group-item">
-                    <?= $data->visimisi ?>
+                    <?= $data->visi ?>
+                  </li>
+
+                  <b>Misi</b>
+                  <li class="list-group-item">
+                    <?= $data->misi ?>
                   </li>
                 </ul>
 

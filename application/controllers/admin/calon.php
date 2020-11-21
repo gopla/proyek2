@@ -79,9 +79,9 @@ class Calon extends CI_Controller
 
   public function delete($id)
   {
-    $this->admin->destroyCalon($id);
+    $this->calon->deleteCalon($id);
     $this->session->set_flashdata('delete', 'Calon deleted');
-    redirect('calon/calon');
+    redirect('admin/calon');
   }
 
   public function show($id)

@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2020 at 02:53 AM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: Nov 21, 2020 at 06:58 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -39,9 +37,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
-(2, 'hana', '21232f297a57a5a743894a0e4a801fc3'),
 (3, 'zea', '202cb962ac59075b964b07152d234b70'),
-(5, 'takaradjiman', '202cb962ac59075b964b07152d234b70');
+(5, 'takaradjiman', '202cb962ac59075b964b07152d234b70'),
+(6, 'wripolinema', '91790b77be7da0371f14f96d364c2af8');
 
 -- --------------------------------------------------------
 
@@ -54,7 +52,8 @@ CREATE TABLE `calon` (
   `no_urut` varchar(2) DEFAULT NULL,
   `nama` varchar(50) DEFAULT NULL,
   `kelas` varchar(50) DEFAULT NULL,
-  `visimisi` text,
+  `visi` text,
+  `misi` text,
   `foto` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -62,10 +61,9 @@ CREATE TABLE `calon` (
 -- Dumping data for table `calon`
 --
 
-INSERT INTO `calon` (`id_calon`, `no_urut`, `nama`, `kelas`, `visimisi`, `foto`) VALUES
-(4, '01', 'Muhammad Misbaqul Ulum', 'MI 3B', 'Jos', 'user1-128x128.jpg'),
-(5, '02', 'Irfak Wahyudi', 'MI 3B', 'Gandos', 'user8-128x128.jpg'),
-(6, '03', 'Naufal Yudhistira', 'MI-3B', 'Man Jadda Wajadda', '31.jpg');
+INSERT INTO `calon` (`id_calon`, `no_urut`, `nama`, `kelas`, `visi`, `misi`, `foto`) VALUES
+(4, '01', 'Faris Ikhlasul Haq', 'TI 2D', 'Menjadi wadah bagi mahasiswa untuk mengembangkan segala potensi yang ada sehingga terbentuk mahasiswa yg cerdas, kreatif, dinamis,  berprestasi, berakhlak mulia dan menjaga nama baik kampus menuju kampus yang Unggul di tingkat nasional', '1. Melaksanakan kegiatan yang dapat meningkatkan hubungan positif antar dosen dan mahasiswa\r\n<br>\r\n2. Menciptakan kondisi lingkungan kampus yang kondusif dalam belajar, untuk menghasilkan mahasiswa yang berkompetensi dan mandiri\r\n<br>\r\n3. Mengaktifkan kelompok belajar dari masing-masing kelas\r\n<br>\r\n4. Memaksimalkan peran mahasiswa dalam menjaga kebersihan lingkungan\r\n<br>\r\n5. Memajukan kualitas ekskul di sekolah agar banyak diminati mahasiswa dan mampu mengukir prestasi diluar kampus', '34.jpg'),
+(5, '02', 'Mochamad Farid Maulana', 'TI 2D', 'Menjadi wadah bagi mahasiswa untuk mengembangkan segala potensi yang ada sehingga terbentuk mahasiswa yg cerdas, kreatif, dinamis,  berprestasi, berakhlak mulia dan menjaga nama baik kampus menuju kampus yang Unggul di tingkat nasional', '1. Melaksanakan kegiatan yang dapat meningkatkan hubungan positif antar dosen dan mahasiswa\r\n<br>\r\n2. Menciptakan kondisi lingkungan kampus yang kondusif dalam belajar, untuk menghasilkan mahasiswa yang berkompetensi dan mandiri\r\n<br>\r\n3. Mengaktifkan kelompok belajar dari masing-masing kelas\r\n<br>\r\n4. Memaksimalkan peran mahasiswa dalam menjaga kebersihan lingkungan\r\n<br>\r\n5. Memajukan kualitas ekskul di sekolah agar banyak diminati mahasiswa dan mampu mengukir prestasi diluar kampus\r\n<br>', '41.jpg');
 
 -- --------------------------------------------------------
 
@@ -88,8 +86,8 @@ INSERT INTO `harapan` (`id_harapan`, `id_pemilih`, `id_calon`, `harapan`) VALUES
 (8, 632, 5, 'Maju terus'),
 (9, 633, 4, 'AA'),
 (10, 634, 5, 'a'),
-(11, 635, 6, 'a'),
-(12, 636, 6, 'a');
+(13, 637, 5, 'Jayaa'),
+(14, 640, 4, 'SEMANGAT');
 
 -- --------------------------------------------------------
 
@@ -116,9 +114,10 @@ INSERT INTO `pemilih` (`id_pemilih`, `nama`, `email`, `pin`, `isVote`, `vote_tim
 (634, 'Irfak Wahyudi', 'irfakwahyudi2@gmail.com', 'FQ47GT', 'Y', '2020-11-20 15:28:50'),
 (635, 'Nida Auliyah Mufida', 'nidaauliyah@gmail.com', 'CXYPJN', 'Y', '2020-11-20 15:28:25'),
 (636, 'Ulvia Yulianti', 'ulvia.yulianti@gmail.com', 'OQDKPY', 'Y', '2020-11-20 15:28:25'),
-(637, 'Gopla', 'yudhistna@gmail.com', 'EF1FOP', 'N', NULL),
+(637, 'Gopla', 'yudhistna@gmail.com', 'EF1FOP', 'Y', '2020-11-21 11:28:02'),
 (638, 'Azalea', 'yudhistn@gmail.com', 'NYJZOP', 'N', NULL),
-(639, 'Yudhistira', 'nblaze12@gmail.com', 'N1XT3R', 'N', NULL);
+(639, 'Yudhistira', 'nblaze12@gmail.com', 'N1XT3R', 'N', NULL),
+(640, 'Irfak Wahyudi', 'irfakwahyudi2@gmail.com', 'SG2ER7', 'Y', '2020-11-21 12:44:07');
 
 -- --------------------------------------------------------
 
@@ -137,9 +136,8 @@ CREATE TABLE `vote` (
 --
 
 INSERT INTO `vote` (`id_vote`, `id_calon`, `jml_vote`) VALUES
-(1, 4, 10),
-(2, 5, 3),
-(3, 6, 5);
+(1, 4, 11),
+(2, 5, 4);
 
 --
 -- Indexes for dumped tables
@@ -186,32 +184,27 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `calon`
 --
 ALTER TABLE `calon`
-  MODIFY `id_calon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `id_calon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `harapan`
 --
 ALTER TABLE `harapan`
-  MODIFY `id_harapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+  MODIFY `id_harapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `pemilih`
 --
 ALTER TABLE `pemilih`
-  MODIFY `id_pemilih` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=640;
-
+  MODIFY `id_pemilih` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=641;
 --
 -- AUTO_INCREMENT for table `vote`
 --
 ALTER TABLE `vote`
   MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- Constraints for dumped tables
 --
@@ -228,7 +221,6 @@ ALTER TABLE `harapan`
 --
 ALTER TABLE `vote`
   ADD CONSTRAINT `FK_vote_calon` FOREIGN KEY (`id_calon`) REFERENCES `calon` (`id_calon`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

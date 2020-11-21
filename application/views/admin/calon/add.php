@@ -26,8 +26,12 @@
                   <input type="text" class="form-control" placeholder="Kelas" name="varKelas">
                 </div>
                 <div class="form-group">
-                  <label>Visi & Misi</label>
-                  <textarea name="varVisiMisi" class="form-control" cols="30" rows="10"></textarea>
+                  <label>Visi</label>
+                  <textarea name="varVisi" class="form-control" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Misi</label>
+                  <textarea name="varMisi" class="form-control" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                   <label>Foto</label>

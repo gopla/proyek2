@@ -30,7 +30,8 @@ class Calon_model extends CI_Model
       'no_urut' => $this->input->post('varNoUrut'),
       'nama' => $this->input->post('varNama'),
       'kelas' => $this->input->post('varKelas'),
-      'visimisi' => $this->input->post('varVisiMisi'),
+      'visi' => $this->input->post('varVisi'),
+      'misi' => $this->input->post('varMisi'),
       'foto' => $upload['file']['file_name'],
     );
 
@@ -43,7 +44,8 @@ class Calon_model extends CI_Model
       'no_urut' => $this->input->post('varNoUrut'),
       'nama' => $this->input->post('varNama'),
       'kelas' => $this->input->post('varKelas'),
-      'visimisi' => $this->input->post('varVisiMisi'),
+      'visi' => $this->input->post('varVisi'),
+      'misi' => $this->input->post('varMisi'),
       'foto' => $upload['file']['file_name'],
     );
 
