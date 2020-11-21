@@ -143,6 +143,41 @@ class Dashboard extends CI_Controller
       $writer->setIncludeCharts(TRUE);	
 			$writer->save('php://output');
   }
+
+  public function exportHarapan()
+  {
+    $data = array(
+      "harapan" => $this->hasil->getHarapan(),
+    );
+    // var_dump($data['dataCalon']);
+			$spreadsheet = new PHPExcel();
+			$sheet = $spreadsheet->getActiveSheet();
+			$sheet->setCellValue('A1', 'No');
+			$sheet->setCellValue('B1', 'Calon');
+      $sheet->setCellValue('C1', 'Harapan');
+			
+      $pemilih = $data['harapan'];
+      // var_dump($pemilih);
+			$no = 1;
+      $x = 2;
+			foreach($pemilih as $row)
+			{
+				$sheet->setCellValue('A'.$x, $no++);
+				$sheet->setCellValue('B'.$x, $row->nama);
+				$sheet->setCellValue('C'.$x, $row->harapan);
+				$x++;
+      }
+
+      $spreadsheet->setActiveSheetIndex(0);
+      ob_clean();
+      $writer = PHPExcel_IOFactory::createWriter($spreadsheet, 'Excel2007');
+			$filename = 'laporan-harapan';
+			header('Content-Type: application/vnd.ms-excel');
+			header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"'); 
+			header('Cache-Control: max-age=0');
+      $writer->setIncludeCharts(TRUE);	
+			$writer->save('php://output');
+  }
 }
   
   /* End of file dashboard.php */

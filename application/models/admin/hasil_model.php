@@ -9,6 +9,15 @@ class Hasil_model extends CI_Model
     return $this->db->get_where('harapan',['id_calon' => $idCalon])->result();
   }
 
+  public function getHarapan()
+  {
+    $this->db->select('harapan.harapan, calon.nama');
+    $this->db->join('pemilih', 'pemilih.id_pemilih = harapan.id_pemilih');
+    $this->db->join('calon', 'calon.id_calon = harapan.id_calon');
+    $this->db->order_by('harapan.id_calon ASC');
+    return $this->db->get('harapan')->result();
+  }
+
   public function getNamaCalonAndCount()
   {
     $this->db->select('calon.nama, vote.*');
