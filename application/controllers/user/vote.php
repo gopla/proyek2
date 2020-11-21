@@ -78,7 +78,12 @@ class Vote extends CI_Controller
 
     $this->vote->add_data($data, 'harapan');
     $this->session->sess_destroy();
-    redirect('/login');
+    echo "
+        <script>
+            alert('Kamu telah keluar. Terima kasih partisipasinya~');
+            window.location = '" . base_url() . "';
+        </script>
+    ";
   }
 }
   

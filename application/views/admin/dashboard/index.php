@@ -81,7 +81,7 @@
           </section>
           <!-- right col -->
           <div class="col-lg-4">
-            <div class="info-box">
+            <div class="info-box" style="height: 30%;">
               <span class="info-box-icon bg-success"><i class="fas fa-chart-bar    "></i></i></span>
 
               <div class="info-box-content">
@@ -92,7 +92,7 @@
             </div>
             <!-- /.info-box -->
             
-            <div class="info-box">
+            <div class="info-box" style="height: 30%;">
               <span class="info-box-icon bg-info"><i class="far fa-star"></i></span>
 
               <div class="info-box-content">

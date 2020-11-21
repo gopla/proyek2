@@ -100,7 +100,9 @@
                     <?php foreach ($tableDatas as $data) : ?>
                       <div class="col-sm-6">
                         <div class="card">
-                          <img class="card-img-top" src="<?= base_url("assets/uploads/calon/$data->foto") ?>" alt="Card image cap">
+                          <center>
+                            <img class="card-img-top" src="<?= base_url("assets/uploads/calon/$data->foto") ?>" alt="Card image cap" style="width: 60%;">
+                          </center>
                           <div class="card-body">
                             <h1 class="text-center"><?= $data->no_urut ?></h1>
                             <h3 class="text-center"><?= $data->nama ?></h3>
@@ -113,7 +115,7 @@
                             <p class="card-text"><?= $data->misi ?> </p>
                             <form action="vote/pilih" method="post">
                               <input type="hidden" name="id" value="<?= $data->id_calon ?>">
-                              <button type="submit" style="margin-left:70%;" class="btn btn-primary">
+                              <button type="submit" style="margin-left:70%;" class="btn btn-primary" onclick="return confirm('Pilih <?= $data->nama ?>?')">
                                   Pilih
                                 <i class="fas fa-edit"></i>
                               </a>
