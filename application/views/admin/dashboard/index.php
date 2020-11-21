@@ -8,7 +8,6 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3><?= $adminCount ?></h3>
-
                 <p>Admin</p>
               </div>
               <div class="icon">
@@ -87,7 +86,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text"><strong>Hasil Pemilihan</strong></span>
-                <a href="#" class="btn btn-outline-primary"><i class="fa fa-download" aria-hidden="true"></i></a>
+                <a href="<?= base_url("admin/dashboard/exportHasil") ?>" class="btn btn-outline-primary"><i class="fa fa-download" aria-hidden="true"></i></a>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -98,7 +97,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text"><strong>Harapan Calon</strong></span>
-                <a href="#" class="btn btn-outline-primary"><i class="fa fa-download" aria-hidden="true"></i></a>
+                <a href="<?= base_url("admin/dashboard/exportHarapan") ?>" class="btn btn-outline-primary"><i class="fa fa-download" aria-hidden="true"></i></a>
               </div>
               <!-- /.info-box-content -->
             </div>

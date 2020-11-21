@@ -15,4 +15,12 @@ class Hasil_model extends CI_Model
     $this->db->join('calon', 'vote.id_calon = calon.id_calon');
     return $this->db->get('vote')->result();
   }
+
+  public function getCountTidakPilih(){
+    return $this->db->query("SELECT * FROM pemilih WHERE isVote='N'");
+  }
+
+  public function getCountPilih(){
+    return $this->db->query("SELECT * FROM pemilih WHERE isVote='Y'");
+  }
 }
