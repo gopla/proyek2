@@ -42,6 +42,14 @@ class Pemilih_model extends CI_Model
   {
     $this->db->query('DELETE from pemilih');
   }
+
+  public function getCountPemilih()
+  {
+    $sql = "SELECT COUNT(pin) AS Total, SUM(CASE WHEN isVote = 'Y' THEN 1 ELSE 0 END) AS Sudah, SUM(CASE WHEN isVote = 'N' then 1 ELSE 0 END) AS Belum from pemilih";
+
+    return $this->db->query($sql)->result();
+    
+  }
 }
   
   /* End of file pemilih_model.php */

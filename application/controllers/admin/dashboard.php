@@ -39,6 +39,7 @@ class Dashboard extends CI_Controller
       "jumlahTidakVote" => $this->hasil->getCountTidakPilih()->num_rows(),
       "jumlahVote" => $this->hasil->getCountPilih()->num_rows(),
       "dataPemilih" => $this->pemilih->getPemilih(),
+      "dataPin" => $this->pemilih->getCountPemilih(),
     );
     // var_dump($data['dataCalon']);
 			$spreadsheet = new PHPExcel();
@@ -61,7 +62,8 @@ class Dashboard extends CI_Controller
       $dataCalon = $data['dataCalon'];
 			$no = 1;
       $x = 2;
-			$y = 2;
+      $y = 2;
+      $z= 6;
     
 			foreach($pemilih as $row)
 			{
@@ -82,6 +84,11 @@ class Dashboard extends CI_Controller
         $sheet->setCellValue('G'.$y, $row->nama);
         $sheet->setCellValue('H'.$y, $row->jml_vote);
         $y++;
+      }      
+      foreach($data["dataPin"] as $row){
+        $sheet->setCellValue('H6', $row->Sudah);
+        $sheet->setCellValue('H7', $row->Belum);
+        $sheet->setCellValue('H8', $row->Total);
       }
       
       $dataSeriesLabels1 = array(
@@ -145,7 +152,7 @@ class Dashboard extends CI_Controller
       $spreadsheet->setActiveSheetIndex(0);
       ob_clean();
       $writer = PHPExcel_IOFactory::createWriter($spreadsheet, 'Excel2007');
-			$filename = 'Laporan-Pemilihan'.date('YmdHis');
+			$filename = 'Laporan-Pemilihan-'.date('YmdHis');
 			header('Content-Type: application/vnd.ms-excel');
 			header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"'); 
 			header('Cache-Control: max-age=0');
@@ -180,7 +187,7 @@ class Dashboard extends CI_Controller
       $spreadsheet->setActiveSheetIndex(0);
       ob_clean();
       $writer = PHPExcel_IOFactory::createWriter($spreadsheet, 'Excel2007');
-			$filename = 'Laporan-Harapan'.date('YmdHis');
+			$filename = 'Laporan-Harapan-'.date('YmdHis');
 			header('Content-Type: application/vnd.ms-excel');
 			header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"'); 
 			header('Cache-Control: max-age=0');

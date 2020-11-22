@@ -25,7 +25,6 @@ class Pemilih extends CI_Controller
     $this->load->view('admin/template/sidebar');
     $this->load->view('admin/pemilih/index');
     $this->load->view('admin/template/footer');
-    // $this->load->view('admin/template/email', $data);
     
   }
 
@@ -99,8 +98,8 @@ class Pemilih extends CI_Controller
       'smtp_host' => 'ssl://smtp.gmail.com',
       'smtp_port' => 465,
       'smtp_timeout' => 120,
-      'smtp_user' => 'teswri@gmail.com',    // Ganti dengan email gmail anda
-      'smtp_pass' => 'tesWRI-123',      // Ganti dengan Password gmail anda
+      'smtp_user' => 'teswri@gmail.com',
+      'smtp_pass' => 'tesWRI-123',
       'mailtype' => 'html',
       'charset' => 'utf-8',
       'wordwrap' => TRUE,
@@ -116,12 +115,7 @@ class Pemilih extends CI_Controller
       $this->email->from('wri@polinema.ac.id', 'Workshop Riset Informatika');
       $this->email->to($pemilih->email);
       $this->email->subject('PIN untuk Vote Ketua Umum WRI 2020/2021');
-      // $this->email->message($mesg);
-      // $this->email->message("Halo $pemilih->nama, jangan lupa ikut voting ketua umum ya! <br>
-      // Silahkan login dengan <b>PINmu : $pemilih->pin </b>");
-      $this->email->message("<p style='text-align: center; line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;'>Hai, <strong>$pemilih->nama<br/></strong></p>
-<p style='text-align: center; line-height: 1.2;'>Jangan lupa ikut pemilihan ketua umum ya!<br/><br/>Login ke aplikasi pakai PINmu dibawah ini<br/><br/><span style='font-size: 28px;'><strong>$pemilih->pin</strong></span><br/><br/></p>
-<p style='text-align: center;'>Terima kasih partisipasinya~!</p>");
+      $this->email->message("<p style='text-align: center; line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;'>Hai, <strong>$pemilih->nama<br/></strong></p><p style='text-align: center; line-height: 1.2;'>Jangan lupa ikut pemilihan ketua umum ya!<br/><br/>Login ke aplikasi pakai PINmu dibawah ini<br/><br/><span style='font-size: 28px;'><strong>$pemilih->pin</strong></span><br/><br/></p><p style='text-align: center;'>Terima kasih partisipasinya~!</p>");
       $sent = $this->email->send();
     };
       
