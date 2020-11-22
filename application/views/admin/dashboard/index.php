@@ -81,7 +81,7 @@
           </section>
           <!-- right col -->
           <div class="col-lg-4">
-            <div class="info-box" style="height: 30%;">
+            <div class="info-box" style="height: 25%;">
               <span class="info-box-icon bg-success"><i class="fas fa-chart-bar    "></i></i></span>
 
               <div class="info-box-content">
@@ -92,7 +92,7 @@
             </div>
             <!-- /.info-box -->
             
-            <div class="info-box" style="height: 30%;">
+            <div class="info-box" style="height: 25%;">
               <span class="info-box-icon bg-info"><i class="far fa-star"></i></span>
 
               <div class="info-box-content">
@@ -103,20 +103,44 @@
             </div>
             <!-- /.info-box -->
 
-            <div class="info-box" style="height: 30%;">
-              <span class="info-box-icon bg-success"><i class="fas fa-chart-bar "></i></i></span>
+            <div class="info-box" style="height: 25%;">
+              <span class="info-box-icon bg-warning"><i class="fas fa-percent    "></i></i></span>
               <div class="info-box-content">
-                    <?php foreach ($dataPin as $data) : ?>
-                      <div class="col-sm-6">
-                          <h3>Jumlah: <?= $data->jml_vote ?></h3>
-                          <h3><?= $data->jml_vote ?></h3>
-                      </div>
-                    <?php endforeach ?>
-                <span class="info-box-text"><strong>Jumlah Pin : <strong></span>
-                <span class="info-box-text"><strong>Terpakai        : </strong></span>
-                <span class="info-box-text"><strong>Belum Terpakai  : </strong></span>
-                <span class="info-box-text"><strong>Total           : </strong></span>
-                <a href="<?= base_url("admin/dashboard/index") ?>" ></i></a>
+                <table>
+                  <tr>
+                    <td>
+                      Total Pin
+                    </td>
+                    <td>
+                      :
+                    </td>
+                    <td>
+                      <?php foreach($dataPin as $data){echo $data->Total;} ?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Sudah Terpakai
+                    </td>
+                    <td>
+                      :
+                    </td>
+                    <td>
+                      <?php foreach($dataPin as $data){echo $data->Sudah;} ?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Belum Terpakai
+                    </td>
+                    <td>
+                      :
+                    </td>
+                    <td>
+                      <?php foreach($dataPin as $data){echo $data->Belum;} ?>
+                    </td>
+                  </tr>
+                </table>
               </div>
               <!-- /.info-box-content -->
             </div>
