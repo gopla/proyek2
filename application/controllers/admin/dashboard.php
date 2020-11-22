@@ -49,18 +49,25 @@ class Dashboard extends CI_Controller
       $sheet->setCellValue('D1', 'Status');
       $sheet->setCellValue('E1', 'Waktu Vote');
       $sheet->setCellValue('G1', 'Calon');
+      $sheet->setCellValue('G5', 'Pin');
+      $sheet->setCellValue('G6', 'Terpakai');
+      $sheet->setCellValue('G7', 'Belum Terpakai');
+      $sheet->setCellValue('G8', 'Total');
       $sheet->setCellValue('H1', 'Jumlah Vote');
+      $sheet->setCellValue('H5', 'Jumlah');
+
 			
       $pemilih = $data['dataPemilih'];
       $dataCalon = $data['dataCalon'];
 			$no = 1;
       $x = 2;
 			$y = 2;
+    
 			foreach($pemilih as $row)
 			{
         $status = "";
         if($row->isVote == "Y"){
-          $status = "Sudah Memilih";
+          $status = "Sudah";
         }else{
           $status = "Belum Memilih";
         }
@@ -138,7 +145,7 @@ class Dashboard extends CI_Controller
       $spreadsheet->setActiveSheetIndex(0);
       ob_clean();
       $writer = PHPExcel_IOFactory::createWriter($spreadsheet, 'Excel2007');
-			$filename = 'laporan-pemilihan'.date('YmdHis');
+			$filename = 'Laporan-Pemilihan'.date('YmdHis');
 			header('Content-Type: application/vnd.ms-excel');
 			header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"'); 
 			header('Cache-Control: max-age=0');
@@ -173,7 +180,7 @@ class Dashboard extends CI_Controller
       $spreadsheet->setActiveSheetIndex(0);
       ob_clean();
       $writer = PHPExcel_IOFactory::createWriter($spreadsheet, 'Excel2007');
-			$filename = 'laporan-harapan'.date('YmdHis');
+			$filename = 'Laporan-Harapan'.date('YmdHis');
 			header('Content-Type: application/vnd.ms-excel');
 			header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"'); 
 			header('Cache-Control: max-age=0');
