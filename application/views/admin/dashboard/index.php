@@ -22,7 +22,6 @@
             <div class="small-box bg-success">
               <div class="inner">
                 <h3><?= $calonCount ?></h3>
-
                 <p>Calon</p>
               </div>
               <div class="icon">
@@ -34,6 +33,7 @@
           <!-- ./col -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
+
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3><?= $pemilihCount ?></h3>
@@ -102,8 +102,26 @@
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
+
+            <div class="info-box" style="height: 30%;">
+              <span class="info-box-icon bg-success"><i class="fas fa-chart-bar "></i></i></span>
+              <div class="info-box-content">
+                    <?php foreach ($dataPin as $data) : ?>
+                      <div class="col-sm-6">
+                          <h3>Jumlah: <?= $data->jml_vote ?></h3>
+                          <h3><?= $data->jml_vote ?></h3>
+                      </div>
+                    <?php endforeach ?>
+                <span class="info-box-text"><strong>Jumlah Pin : <strong></span>
+                <span class="info-box-text"><strong>Terpakai        : </strong></span>
+                <span class="info-box-text"><strong>Belum Terpakai  : </strong></span>
+                <span class="info-box-text"><strong>Total           : </strong></span>
+                <a href="<?= base_url("admin/dashboard/index") ?>" ></i></a>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
           </div>
-          
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
