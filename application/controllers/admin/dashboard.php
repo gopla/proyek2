@@ -25,6 +25,7 @@ class Dashboard extends CI_Controller
       "calonCount" => $this->calon->countCalon(),
       "pemilihCount" => $this->pemilih->countPemilih(),
       "dataCalon" => $this->hasil->getNamaCalonAndCount(),
+      "dataPin" => $this->pemilih->getCountPemilih(), 
     );
     $this->load->view('admin/template/header', $data);
     $this->load->view('admin/template/sidebar');
