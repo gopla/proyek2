@@ -115,7 +115,29 @@ class Pemilih extends CI_Controller
       $this->email->from('wri@polinema.ac.id', 'Workshop Riset Informatika');
       $this->email->to($pemilih->email);
       $this->email->subject('PIN untuk Vote Ketua Umum WRI 2020/2021');
-      $this->email->message("<p style='text-align: center; line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;'>Hai, <strong>$pemilih->nama<br/></strong></p><p style='text-align: center; line-height: 1.2;'>Jangan lupa ikut pemilihan ketua umum ya!<br/><br/>Login ke aplikasi pakai PINmu dibawah ini<br/><br/><span style='font-size: 28px;'><strong>$pemilih->pin</strong></span><br/><br/></p><p style='text-align: center;'>Terima kasih partisipasinya~!</p>");
+      $this->email->message("<p
+			style='
+				text-align: center;
+				line-height: 1.2;
+				word-break: break-word;
+				mso-line-height-alt: 14px;
+				margin: 0;
+			'
+		>
+			Hai, <strong>$pemilih->nama<br /></strong>
+		</p>
+		<p style='text-align: center; line-height: 1.2'>
+			Jangan lupa ikut pemilihan ketua umum ya! <br /><br />
+			Lakukan pemilihan di
+			<a href='http://evote.gopla.xyz/' target='_blank'
+				>Web Pemilihan Ketum 2020/2021</a
+			>
+			<br /><br />Login ke aplikasi pakai PINmu dibawah ini<br /><br /><span
+				style='font-size: 28px'
+				><strong>$pemilih->pin</strong></span
+			><br /><br />
+		</p>
+		<p style='text-align: center'>Terima kasih partisipasinya~!</p>");
       $sent = $this->email->send();
     };
       
