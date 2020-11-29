@@ -98,7 +98,7 @@
                 ?>
                   <div class="row">
                     <?php foreach ($tableDatas as $data) : ?>
-                      <div class="col-sm-6">
+                      <div class="col-sm-4">
                         <div class="card">
                           <center>
                             <img class="card-img-top" src="<?= base_url("assets/uploads/calon/$data->foto") ?>" alt="Card image cap" style="width: 60%;">
