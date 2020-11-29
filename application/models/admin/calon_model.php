@@ -36,6 +36,9 @@ class Calon_model extends CI_Model
     );
 
     $this->db->insert('calon', $data);
+    
+    $id = $this->db->insert_id();
+    $this->db->insert('vote', ['id_calon' => $id, 'jml_vote' => 0]);
   }
 
   public function editCalon($upload, $id)
