@@ -103,7 +103,7 @@ class Dashboard extends CI_Controller
       $xAxisTickValues1 = array(
         new PHPExcel_Chart_DataSeriesValues(
             'String',
-            'Worksheet!$G$2:$G$3',
+            'Worksheet!$G$2:$G$4',
             NULL,
             2)
       );
@@ -111,7 +111,7 @@ class Dashboard extends CI_Controller
       $dataSeriesValues1 = array(
         new PHPExcel_Chart_DataSeriesValues(
             'Number',
-            'Worksheet!$H$2:$H$3',
+            'Worksheet!$H$2:$H$4',
             NULL,
             2),
       );
